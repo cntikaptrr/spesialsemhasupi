@@ -1,0 +1,263 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fff3;
+    position: relative;
+    overflow: hidden;
+    /* Pastikan konten tidak keluar dari viewport */
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: openEnvelope 1s ease-out;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main {
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    font-size: 16px;
+    /* Pastikan ukuran font cukup besar untuk terlihat */
+    margin-top: 20px;
+    color: #ff6384;
+    /* Warna teks yang kontras */
+    z-index: 10;
+    /* Pastikan footer tidak tertutup oleh elemen lain */
+    position: relative;
+    /* Atur posisi relative agar tidak terpengaruh oleh elemen lain */
+}
+
+footer p {
+    margin: 5px 0;
+    /* Margin yang konsisten untuk setiap paragraf */
+    font-style: italic;
+    /* Font italic jika diinginkan */
+}
+
+.footer-text {
+    display: block;
+    /* Pastikan footer-text terlihat sebagai elemen block */
+}
+
+/* Hati sebagai pengganti balon */
+.balloon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #ff6384;
+    transform: rotate(-45deg);
+    margin: 10px;
+    display: inline-block;
+}
+
+.balloon::before,
+.balloon::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #ff6384;
+    border-radius: 50%;
+}
+
+.balloon::before {
+    top: -20px;
+    left: 0;
+}
+
+.balloon::after {
+    top: 0;
+    left: 20px;
+}
+
+.balloon:nth-child(1) {
+    left: 30%;
+    top: 20px;
+}
+
+.balloon:nth-child(2) {
+    left: 50%;
+    top: 20px;
+}
+
+.balloon:nth-child(3) {
+    left: 70%;
+    top: 20px;
+}
+
+.background-decoration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    z-index: -1;
+}
+
+.gift-button {
+    background-color: #ff6384;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.show-message-button {
+    padding: 15px 25px;
+    background-color: #ff6384;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.5s ease;
+    margin-bottom: 0;
+}
+
+.show-message-button:hover {
+    background-color: #ff4d77;
+}
+
+.show-message-button span {
+    position: relative;
+}
+
+.show-message-button span::before {
+    content: "\1F381";
+    margin-right: 10px;
+}
+
+.birthday-message {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.audio-button {
+    padding: 10px 20px;
+    background-color: #ff6384;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.audio-button:hover {
+    background-color: #ff4d77;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    50% {
+        transform: translateY(-50px) rotate(-45deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-45deg);
+    }
+}
+
+@keyframes openEnvelope {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.birthday-message {
+    border: 2px solid #ff6384;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff3f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.birthday-message p {
+    margin: 10px 0;
+}
+
+.gift-button {
+    background-color: #ff6384;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.gift-button:hover {
+    background-color: #ff4a73;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    .birthday-message {
+        padding: 15px;
+    }
+
+    .gift-button {
+        padding: 8px 16px;
+    }
+}

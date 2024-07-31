@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>⸜(｡˃ ᵕ ˂)⸝♡Untuk Cintaku</title>
+    <meta name="description" content="Spesial untuk Upi">
+    <meta name="theme-color" content="#ff6384">
+</head>
+
+<body>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <button class="audio-button" onclick="toggleAudio()">
+        ⏸️
+    </button>
+
+    <div class="container">
+        <header>
+            <h1>Selamat Semhas Sayangku(ෆ˙ᵕ˙ෆ)♡</h1>
+            <h2>Moch Luthfi Idzulkifly(uo)A.Md Tra</h2>
+        </header>
+        <main>
+            <button class="show-message-button" id="showMessageButton" onclick="showBirthdayMessage()">
+                klik
+            </button>
+            <div class="birthday-message" id="birthdayMessage">
+                <p> sayangkuuu congrast yaa u deserves thiss!!ε(´｡•᎑•`)っ 💕</p>
+                <p> i love youu, so proud of you cintakuu୧⍤⃝💐
+                </p>
+                <p> perjalanan ini mungkin tidak mudah, tetapi kamu telah menunjukkan keberanian, ketekunan, dan
+                    dedikasi yang luar biasa. aku sangat bangga dan bersyukur bisa menjadi bagian dari perjalanan
+                    hidupmu kamuu(´｡• ◡ •｡`) ♡semoga ini menjadi langkah awal untuk kesuksesan-kesuksesan berikutnya yg
+                    akan kita raih bersama♥︎♥︎</p>
+                <audio id="birthdayAudio" src="sempurna.mp3" preload="auto" autoplay loop
+                    style="display: none;"></audio>
+                <button class="gift-button" id="giftButton" style="display: none;" onclick="redirectToGiftPage()">
+                    Klik
+                </button>
+                <footer>
+                    <p class="footer-text">with love💖</p>
+                    <p class="footer-text">cantika cantik</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleAudio() {
+            var birthdayAudio = document.getElementById('birthdayAudio');
+            var audioButton = document.querySelector('.audio-button');
+
+            if (birthdayAudio.paused) {
+                birthdayAudio.play();
+                audioButton.textContent = '⏸️';
+            } else {
+                birthdayAudio.pause();
+                audioButton.textContent = '▶️';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var birthdayMessage = document.getElementById('birthdayMessage');
+            var giftButton = document.querySelector('.gift-button')
+            birthdayMessage.style.display = 'block';
+            giftButton.style.display = 'block';
+        })
+
+        function redirectToGiftPage() {
+            window.location.href = 'password-page.html'
+        }
+        function showBirthdayMessage() {
+            var showMessageButton = document.getElementById('showMessageButton');
+            var birthdayMessage = document.getElementById('birthdayMessage');
+            var giftButton = document.getElementById('giftButton');
+            showMessageButton.style.opacity = '0';
+            birthdayMessage.style.opacity = '1';
+            birthdayMessage.style.transform = 'translateY(0)';
+            var birthdayAudio = document.getElementById('birthdayAudio');
+            birthdayAudio.play();
+            giftButton.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
